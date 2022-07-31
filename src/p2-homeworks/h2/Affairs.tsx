@@ -1,11 +1,12 @@
 import React from 'react'
 import Affair from './Affair'
 import {AffairType, FilterType} from './HW2'
+import style from './Affairs.module.css'
 
 type AffairsPropsType = { // need to fix any
     data: Array<AffairType>
-    setFilter: (filter:FilterType)=>void
-    deleteAffairCallback: (_id: number)=>void
+    setFilter: (filter: FilterType) => void
+    deleteAffairCallback: (_id: number) => void
 }
 
 function Affairs(props: AffairsPropsType) {
@@ -38,11 +39,13 @@ function Affairs(props: AffairsPropsType) {
         <div>
 
             {mappedAffairs}
+            <div className={style.button_group}>
+                <button onClick={setAll}>All</button>
+                <button onClick={setHigh}>High</button>
+                <button onClick={setMiddle}>Middle</button>
+                <button onClick={setLow}>Low</button>
+            </div>
 
-            <button onClick={setAll}>All</button>
-            <button onClick={setHigh}>High</button>
-            <button onClick={setMiddle}>Middle</button>
-            <button onClick={setLow}>Low</button>
         </div>
     )
 }

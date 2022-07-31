@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
+import styles from "./Affairs.module.css"
 
 // types
 export type AffairPriorityType = 'high' | 'middle' | 'low'
@@ -24,11 +25,11 @@ const defaultAffairs: Array<AffairType> = [
 // pure helper functions
 export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): Array<AffairType> => {
     if (filter === 'all') return affairs
-    else return affairs.filter(el=>el.priority===filter)
+    else return affairs.filter(el => el.priority === filter)
 }
 export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => {
     console.log("deleting")
-    return affairs.filter((el)=>el._id!==_id)
+    return affairs.filter((el) => el._id !== _id)
 }
 
 function HW2() {
@@ -42,14 +43,14 @@ function HW2() {
         <div>
             <hr/>
             homeworks 2
-
-            {/*should work (должно работать)*/}
-            <Affairs
-                data={filteredAffairs}
-                setFilter={setFilter}
-                deleteAffairCallback={deleteAffairCallback}
-            />
-
+            <div className={styles.affairs_container}>
+                {/*should work (должно работать)*/}
+                <Affairs
+                    data={filteredAffairs}
+                    setFilter={setFilter}
+                    deleteAffairCallback={deleteAffairCallback}
+                />
+            </div>
             <hr/>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeAffairs/>*/}
