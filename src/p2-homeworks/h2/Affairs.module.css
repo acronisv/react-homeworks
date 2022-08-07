@@ -15,3 +15,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+.priority_green {
+    color: green;
+}
+
+.priority_orange {
+    color: orange;
+}
+
+.priority_red {
+    color: red
+}

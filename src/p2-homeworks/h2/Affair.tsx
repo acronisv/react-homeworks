@@ -14,10 +14,12 @@ function Affair(props: AffairPropsType) {
         return
     }
 
+    const priorityClass = (props.affair.priority==='high') ? style.priority_green : (props.affair.priority==='middle') ? style.priority_orange : style.priority_red
+
     return (
         <div className={style.affair_container}>
             <span>{props.affair.name} </span>
-            <span>[{props.affair.priority}] </span>
+            <span className={priorityClass}>[{props.affair.priority}] </span>
             <button onClick={deleteCallback}>X</button>
         </div>
     )
