@@ -17,19 +17,27 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const [error, setError] = useState<string>('')
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.currentTarget.value) {
-            setName(e.currentTarget.value)
-            setError('')
+
+        const trimmedValue = e.currentTarget.value.trim()
+
+        if (trimmedValue) {
+            setName(trimmedValue)
+            error && setError('')
+        } else {
+            name && setName('')
+            setError("Empty name")
         }
     }
 
     const addUser = () => {
-        if (name) {
-            console.log(`Hello ${name}!`)
-            addUserCallback(name)
-            setName('')
-        } else {
-            setError("Empty name")
+        addUserCallback(name)
+        alert(`Hello ${name}!`)
+        setName('')
+    }
+
+    const onEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' && name) {
+            addUser()
         }
     }
 
@@ -40,6 +48,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             name={name}
             setNameCallback={setNameCallback}
             addUser={addUser}
+            onEnter={onEnter}
             error={error}
             totalUsers={totalUsers}
         />
