@@ -1,7 +1,31 @@
 .default {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
 
+.default:hover {
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+    text-decoration: none;
 }
 
 .red {
     background: red;
+    outline:none;
+    border-color: red;
+}
+
+.red:hover {
+    background: #e73131;
+    border-color: #e73131;
+}
+
+.blue {
+    border: 1px solid blue
 }
