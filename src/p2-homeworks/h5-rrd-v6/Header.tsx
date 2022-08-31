@@ -6,9 +6,13 @@ function Header() {
     return (
         <div>
             <nav className={s.headerNav}>
-                <NavLink className={s.headerNavElement} to={'/'}>Pre junior</NavLink>
-                <NavLink className={s.headerNavElement} to={'/junior'}>Junior</NavLink>
-                <NavLink className={s.headerNavElement} to={'/junior+'}>Junior+</NavLink>
+                <div className={s.menuWrap}>
+                    <NavLink className={s.headerNavElement} to={'/'}>Pre junior</NavLink>
+                    <NavLink className={s.headerNavElement} to={'/junior'}>Junior</NavLink>
+                    <NavLink className={s.headerNavElement} to={'/junior+'}>Junior+</NavLink>
+                </div>
+                <span className={s.menuSlider}>
+                </span>
             </nav>
         </div>
     )

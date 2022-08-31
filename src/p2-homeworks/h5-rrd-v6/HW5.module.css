@@ -1,12 +1,35 @@
 .headerNav {
     display: flex;
+    padding: 10px;
 }
 
-.headerNav:hover .headerNavElement {
-    visibility: visible;
+.menuWrap {
+    display: flex;
+    position: relative;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 1s ease
 }
 
 .headerNavElement {
+    text-decoration: none;
     margin-right: 10px;
-    visibility: hidden;
+    height: 20px;
+    color: greenyellow;
+}
+
+.headerNavElement:hover {
+    color: cyan;
+}
+
+.menuSlider {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: greenyellow;
+}
+
+.headerNav:hover  .menuWrap{
+    max-width: 100%;
+    transition: max-width 2s ease
 }
