@@ -1,0 +1,17 @@
+.people_wrap {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+}
+
+.buttons_wrap {
+    display: flex;
+    margin-top: 10px;
+}
+.buttons_wrap button {
+    width: 85px;
+    background-color: #9de88a;
+    font-size: 12px;
+    border: none;
+    margin-right: 3px;
+}
